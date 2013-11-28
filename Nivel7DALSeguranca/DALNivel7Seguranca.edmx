@@ -1,0 +1,1621 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Nivel7SegurancaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="Nivel7SegurancaModelStoreContainer">
+          <EntitySet Name="Aplicacao" EntityType="Nivel7SegurancaModel.Store.Aplicacao" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="HistoricoAcesso" EntityType="Nivel7SegurancaModel.Store.HistoricoAcesso" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OperacaoSistema" EntityType="Nivel7SegurancaModel.Store.OperacaoSistema" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OperacaoTelaPerfil" EntityType="Nivel7SegurancaModel.Store.OperacaoTelaPerfil" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PerfilSistema" EntityType="Nivel7SegurancaModel.Store.PerfilSistema" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="Nivel7SegurancaModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tela_Operacao" EntityType="Nivel7SegurancaModel.Store.Tela_Operacao" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TelaSistema" EntityType="Nivel7SegurancaModel.Store.TelaSistema" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Usuario" EntityType="Nivel7SegurancaModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UsuarioAplicacaoPerfil" EntityType="Nivel7SegurancaModel.Store.UsuarioAplicacaoPerfil" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="vwAplicacaoTelaOperacao" EntityType="Nivel7SegurancaModel.Store.vwAplicacaoTelaOperacao" store:Type="Views" store:Schema="dbo" store:Name="vwAplicacaoTelaOperacao">
+            <DefiningQuery>SELECT 
+      [vwAplicacaoTelaOperacao].[NomeAplicacao] AS [NomeAplicacao], 
+      [vwAplicacaoTelaOperacao].[NomeTela] AS [NomeTela], 
+      [vwAplicacaoTelaOperacao].[Descricao] AS [Descricao], 
+      [vwAplicacaoTelaOperacao].[CodigoTela] AS [CodigoTela], 
+      [vwAplicacaoTelaOperacao].[NomeArquivo] AS [NomeArquivo], 
+      [vwAplicacaoTelaOperacao].[Expr1] AS [Expr1], 
+      [vwAplicacaoTelaOperacao].[Expr2] AS [Expr2], 
+      [vwAplicacaoTelaOperacao].[IDOperacao] AS [IDOperacao], 
+      [vwAplicacaoTelaOperacao].[IDAplicacao] AS [IDAplicacao], 
+      [vwAplicacaoTelaOperacao].[NomeOperacao] AS [NomeOperacao], 
+      [vwAplicacaoTelaOperacao].[Expr3] AS [Expr3]
+      FROM [dbo].[vwAplicacaoTelaOperacao] AS [vwAplicacaoTelaOperacao]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwAplicacaoUsuarioPerfil" EntityType="Nivel7SegurancaModel.Store.vwAplicacaoUsuarioPerfil" store:Type="Views" store:Schema="dbo" store:Name="vwAplicacaoUsuarioPerfil">
+            <DefiningQuery>SELECT 
+      [vwAplicacaoUsuarioPerfil].[IDUsuario] AS [IDUsuario], 
+      [vwAplicacaoUsuarioPerfil].[Nome] AS [Nome], 
+      [vwAplicacaoUsuarioPerfil].[Email] AS [Email], 
+      [vwAplicacaoUsuarioPerfil].[DataExclusao] AS [DataExclusao], 
+      [vwAplicacaoUsuarioPerfil].[IDAplicacao] AS [IDAplicacao], 
+      [vwAplicacaoUsuarioPerfil].[NomeAplicacao] AS [NomeAplicacao], 
+      [vwAplicacaoUsuarioPerfil].[IDPerfilSistema] AS [IDPerfilSistema], 
+      [vwAplicacaoUsuarioPerfil].[NomePerfil] AS [NomePerfil], 
+      [vwAplicacaoUsuarioPerfil].[Descricao] AS [Descricao], 
+      [vwAplicacaoUsuarioPerfil].[AcessoPermitido] AS [AcessoPermitido]
+      FROM [dbo].[vwAplicacaoUsuarioPerfil] AS [vwAplicacaoUsuarioPerfil]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwOperacaoTelaPerfil" EntityType="Nivel7SegurancaModel.Store.vwOperacaoTelaPerfil" store:Type="Views" store:Schema="dbo" store:Name="vwOperacaoTelaPerfil">
+            <DefiningQuery>SELECT 
+      [vwOperacaoTelaPerfil].[IDPerfilSistema] AS [IDPerfilSistema], 
+      [vwOperacaoTelaPerfil].[IDTela] AS [IDTela], 
+      [vwOperacaoTelaPerfil].[IDOperacao] AS [IDOperacao], 
+      [vwOperacaoTelaPerfil].[NomePerfil] AS [NomePerfil], 
+      [vwOperacaoTelaPerfil].[NomeTela] AS [NomeTela], 
+      [vwOperacaoTelaPerfil].[NomeOperacao] AS [NomeOperacao], 
+      [vwOperacaoTelaPerfil].[IDAplicacao] AS [IDAplicacao], 
+      [vwOperacaoTelaPerfil].[NomeAplicacao] AS [NomeAplicacao], 
+      [vwOperacaoTelaPerfil].[CodigoTela] AS [CodigoTela], 
+      [vwOperacaoTelaPerfil].[NomeArquivo] AS [NomeArquivo], 
+      [vwOperacaoTelaPerfil].[Descricao] AS [Descricao]
+      FROM [dbo].[vwOperacaoTelaPerfil] AS [vwOperacaoTelaPerfil]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwPerfilUsuario" EntityType="Nivel7SegurancaModel.Store.vwPerfilUsuario" store:Type="Views" store:Schema="dbo" store:Name="vwPerfilUsuario">
+            <DefiningQuery>SELECT 
+      [vwPerfilUsuario].[IDUsuario] AS [IDUsuario], 
+      [vwPerfilUsuario].[IDPerfilSistema] AS [IDPerfilSistema], 
+      [vwPerfilUsuario].[Nome] AS [Nome], 
+      [vwPerfilUsuario].[Email] AS [Email], 
+      [vwPerfilUsuario].[DataExclusao] AS [DataExclusao], 
+      [vwPerfilUsuario].[NomePerfil] AS [NomePerfil], 
+      [vwPerfilUsuario].[Expr1] AS [Expr1]
+      FROM [dbo].[vwPerfilUsuario] AS [vwPerfilUsuario]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwTelaAplicacao" EntityType="Nivel7SegurancaModel.Store.vwTelaAplicacao" store:Type="Views" store:Schema="dbo" store:Name="vwTelaAplicacao">
+            <DefiningQuery>SELECT 
+      [vwTelaAplicacao].[IDAplicacao] AS [IDAplicacao], 
+      [vwTelaAplicacao].[NomeAplicacao] AS [NomeAplicacao], 
+      [vwTelaAplicacao].[Descricao] AS [Descricao], 
+      [vwTelaAplicacao].[DataExclusao] AS [DataExclusao], 
+      [vwTelaAplicacao].[IDTela] AS [IDTela], 
+      [vwTelaAplicacao].[NomeTela] AS [NomeTela], 
+      [vwTelaAplicacao].[CodigoTela] AS [CodigoTela], 
+      [vwTelaAplicacao].[NomeArquivo] AS [NomeArquivo], 
+      [vwTelaAplicacao].[Expr1] AS [Expr1]
+      FROM [dbo].[vwTelaAplicacao] AS [vwTelaAplicacao]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwTelaOperacao" EntityType="Nivel7SegurancaModel.Store.vwTelaOperacao" store:Type="Views" store:Schema="dbo" store:Name="vwTelaOperacao">
+            <DefiningQuery>SELECT 
+      [vwTelaOperacao].[IDTela] AS [IDTela], 
+      [vwTelaOperacao].[IDOperacao] AS [IDOperacao], 
+      [vwTelaOperacao].[NomeTela] AS [NomeTela], 
+      [vwTelaOperacao].[CodigoTela] AS [CodigoTela], 
+      [vwTelaOperacao].[NomeArquivo] AS [NomeArquivo], 
+      [vwTelaOperacao].[DataExclusao] AS [DataExclusao], 
+      [vwTelaOperacao].[Expr1] AS [Expr1], 
+      [vwTelaOperacao].[NomeOperacao] AS [NomeOperacao]
+      FROM [dbo].[vwTelaOperacao] AS [vwTelaOperacao]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_HistoricoAcesso_Aplicacao" Association="Nivel7SegurancaModel.Store.FK_HistoricoAcesso_Aplicacao">
+            <End Role="Aplicacao" EntitySet="Aplicacao" />
+            <End Role="HistoricoAcesso" EntitySet="HistoricoAcesso" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HistoricoAcesso_Usuario" Association="Nivel7SegurancaModel.Store.FK_HistoricoAcesso_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="HistoricoAcesso" EntitySet="HistoricoAcesso" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OperacaoSistema_Aplicacao" Association="Nivel7SegurancaModel.Store.FK_OperacaoSistema_Aplicacao">
+            <End Role="Aplicacao" EntitySet="Aplicacao" />
+            <End Role="OperacaoSistema" EntitySet="OperacaoSistema" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OperacaoTelaPerfil_PerfilSistema" Association="Nivel7SegurancaModel.Store.FK_OperacaoTelaPerfil_PerfilSistema">
+            <End Role="PerfilSistema" EntitySet="PerfilSistema" />
+            <End Role="OperacaoTelaPerfil" EntitySet="OperacaoTelaPerfil" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OperacaoTelaPerfil_TelaSistema" Association="Nivel7SegurancaModel.Store.FK_OperacaoTelaPerfil_TelaSistema">
+            <End Role="TelaSistema" EntitySet="TelaSistema" />
+            <End Role="OperacaoTelaPerfil" EntitySet="OperacaoTelaPerfil" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PerfilSistema_Aplicacao" Association="Nivel7SegurancaModel.Store.FK_PerfilSistema_Aplicacao">
+            <End Role="Aplicacao" EntitySet="Aplicacao" />
+            <End Role="PerfilSistema" EntitySet="PerfilSistema" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tela_Operacao_OperacaoSistema" Association="Nivel7SegurancaModel.Store.FK_Tela_Operacao_OperacaoSistema">
+            <End Role="OperacaoSistema" EntitySet="OperacaoSistema" />
+            <End Role="Tela_Operacao" EntitySet="Tela_Operacao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tela_Operacao_TelaSistema" Association="Nivel7SegurancaModel.Store.FK_Tela_Operacao_TelaSistema">
+            <End Role="TelaSistema" EntitySet="TelaSistema" />
+            <End Role="Tela_Operacao" EntitySet="Tela_Operacao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TelaSistema_Aplicacao" Association="Nivel7SegurancaModel.Store.FK_TelaSistema_Aplicacao">
+            <End Role="Aplicacao" EntitySet="Aplicacao" />
+            <End Role="TelaSistema" EntitySet="TelaSistema" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioAplicacaoPerfil_Aplicacao" Association="Nivel7SegurancaModel.Store.FK_UsuarioAplicacaoPerfil_Aplicacao">
+            <End Role="Aplicacao" EntitySet="Aplicacao" />
+            <End Role="UsuarioAplicacaoPerfil" EntitySet="UsuarioAplicacaoPerfil" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioAplicacaoPerfil_PerfilSistema1" Association="Nivel7SegurancaModel.Store.FK_UsuarioAplicacaoPerfil_PerfilSistema1">
+            <End Role="PerfilSistema" EntitySet="PerfilSistema" />
+            <End Role="UsuarioAplicacaoPerfil" EntitySet="UsuarioAplicacaoPerfil" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioAplicacaoPerfil_Usuario" Association="Nivel7SegurancaModel.Store.FK_UsuarioAplicacaoPerfil_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="UsuarioAplicacaoPerfil" EntitySet="UsuarioAplicacaoPerfil" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Aplicacao">
+          <Key>
+            <PropertyRef Name="IDAplicacao" />
+          </Key>
+          <Property Name="IDAplicacao" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="NomeAplicacao" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Descricao" Type="varchar(max)" Nullable="false" />
+          <Property Name="DataExclusao" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="HistoricoAcesso">
+          <Key>
+            <PropertyRef Name="IDAplicacao" />
+            <PropertyRef Name="IDUsuario" />
+            <PropertyRef Name="DataHora" />
+          </Key>
+          <Property Name="IDAplicacao" Type="int" Nullable="false" />
+          <Property Name="IDUsuario" Type="int" Nullable="false" />
+          <Property Name="DataHora" Type="smalldatetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OperacaoSistema">
+          <Key>
+            <PropertyRef Name="IDOperacao" />
+          </Key>
+          <Property Name="IDOperacao" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDAplicacao" Type="int" Nullable="false" />
+          <Property Name="NomeOperacao" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="DataExclusao" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="OperacaoTelaPerfil">
+          <Key>
+            <PropertyRef Name="IDPerfilSistema" />
+            <PropertyRef Name="IDTela" />
+            <PropertyRef Name="IDOperacao" />
+          </Key>
+          <Property Name="IDPerfilSistema" Type="int" Nullable="false" />
+          <Property Name="IDTela" Type="int" Nullable="false" />
+          <Property Name="IDOperacao" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PerfilSistema">
+          <Key>
+            <PropertyRef Name="IDPerfilSistema" />
+          </Key>
+          <Property Name="IDPerfilSistema" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDAplicacao" Type="int" Nullable="false" />
+          <Property Name="NomePerfil" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="dataexclusao" Type="datetime" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Tela_Operacao">
+          <Key>
+            <PropertyRef Name="IDTela" />
+            <PropertyRef Name="IDOperacao" />
+          </Key>
+          <Property Name="IDTela" Type="int" Nullable="false" />
+          <Property Name="IDOperacao" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TelaSistema">
+          <Key>
+            <PropertyRef Name="IDTela" />
+          </Key>
+          <Property Name="IDTela" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDAplicacao" Type="int" Nullable="false" />
+          <Property Name="NomeTela" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CodigoTela" Type="int" Nullable="false" />
+          <Property Name="NomeArquivo" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="DataExclusao" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="IDUsuario" />
+          </Key>
+          <Property Name="IDUsuario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Email" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="TelefoneFixo" Type="varchar" MaxLength="13" />
+          <Property Name="Celular" Type="varchar" MaxLength="13" />
+          <Property Name="Bairro" Type="varchar" MaxLength="30" />
+          <Property Name="Rua" Type="varchar" MaxLength="50" />
+          <Property Name="Municipio" Type="varchar" MaxLength="30" />
+          <Property Name="NumeroCasa" Type="varchar" MaxLength="10" />
+          <Property Name="Estado" Type="varchar" MaxLength="30" />
+          <Property Name="DataExclusao" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="UsuarioAplicacaoPerfil">
+          <Key>
+            <PropertyRef Name="IDAplicacao" />
+            <PropertyRef Name="IDUsuario" />
+            <PropertyRef Name="IDPerfilSistema" />
+          </Key>
+          <Property Name="IDAplicacao" Type="int" Nullable="false" />
+          <Property Name="IDUsuario" Type="int" Nullable="false" />
+          <Property Name="IDPerfilSistema" Type="int" Nullable="false" />
+          <Property Name="Senha" Type="varchar" MaxLength="50" />
+          <Property Name="AcessoPermitido" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Nivel7Seguranca.dbo.vwAplicacaoTelaOperacao' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwAplicacaoTelaOperacao">
+          <Key>
+            <PropertyRef Name="NomeAplicacao" />
+            <PropertyRef Name="NomeTela" />
+            <PropertyRef Name="Descricao" />
+            <PropertyRef Name="CodigoTela" />
+            <PropertyRef Name="NomeArquivo" />
+            <PropertyRef Name="Expr2" />
+            <PropertyRef Name="IDOperacao" />
+            <PropertyRef Name="IDAplicacao" />
+            <PropertyRef Name="NomeOperacao" />
+          </Key>
+          <Property Name="NomeAplicacao" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="NomeTela" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Descricao" Type="varchar(max)" Nullable="false" />
+          <Property Name="CodigoTela" Type="int" Nullable="false" />
+          <Property Name="NomeArquivo" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Expr1" Type="smalldatetime" />
+          <Property Name="Expr2" Type="int" Nullable="false" />
+          <Property Name="IDOperacao" Type="int" Nullable="false" />
+          <Property Name="IDAplicacao" Type="int" Nullable="false" />
+          <Property Name="NomeOperacao" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Expr3" Type="smalldatetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Nivel7Seguranca.dbo.vwAplicacaoUsuarioPerfil' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwAplicacaoUsuarioPerfil">
+          <Key>
+            <PropertyRef Name="IDUsuario" />
+            <PropertyRef Name="Nome" />
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="IDUsuario" Type="int" Nullable="false" />
+          <Property Name="Nome" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Email" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="DataExclusao" Type="smalldatetime" />
+          <Property Name="IDAplicacao" Type="int" />
+          <Property Name="NomeAplicacao" Type="varchar" MaxLength="50" />
+          <Property Name="IDPerfilSistema" Type="int" />
+          <Property Name="NomePerfil" Type="varchar" MaxLength="50" />
+          <Property Name="Descricao" Type="varchar(max)" />
+          <Property Name="AcessoPermitido" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Nivel7Seguranca.dbo.vwOperacaoTelaPerfil' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwOperacaoTelaPerfil">
+          <Key>
+            <PropertyRef Name="IDPerfilSistema" />
+            <PropertyRef Name="IDTela" />
+            <PropertyRef Name="IDOperacao" />
+            <PropertyRef Name="NomePerfil" />
+            <PropertyRef Name="NomeTela" />
+            <PropertyRef Name="NomeOperacao" />
+            <PropertyRef Name="IDAplicacao" />
+            <PropertyRef Name="NomeAplicacao" />
+            <PropertyRef Name="CodigoTela" />
+            <PropertyRef Name="NomeArquivo" />
+            <PropertyRef Name="Descricao" />
+          </Key>
+          <Property Name="IDPerfilSistema" Type="int" Nullable="false" />
+          <Property Name="IDTela" Type="int" Nullable="false" />
+          <Property Name="IDOperacao" Type="int" Nullable="false" />
+          <Property Name="NomePerfil" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="NomeTela" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="NomeOperacao" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="IDAplicacao" Type="int" Nullable="false" />
+          <Property Name="NomeAplicacao" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CodigoTela" Type="int" Nullable="false" />
+          <Property Name="NomeArquivo" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Descricao" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Nivel7Seguranca.dbo.vwPerfilUsuario' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwPerfilUsuario">
+          <Key>
+            <PropertyRef Name="IDUsuario" />
+            <PropertyRef Name="IDPerfilSistema" />
+            <PropertyRef Name="Nome" />
+            <PropertyRef Name="Email" />
+            <PropertyRef Name="NomePerfil" />
+          </Key>
+          <Property Name="IDUsuario" Type="int" Nullable="false" />
+          <Property Name="IDPerfilSistema" Type="int" Nullable="false" />
+          <Property Name="Nome" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Email" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="DataExclusao" Type="smalldatetime" />
+          <Property Name="NomePerfil" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Expr1" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Nivel7Seguranca.dbo.vwTelaAplicacao' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwTelaAplicacao">
+          <Key>
+            <PropertyRef Name="IDAplicacao" />
+            <PropertyRef Name="NomeAplicacao" />
+            <PropertyRef Name="Descricao" />
+            <PropertyRef Name="IDTela" />
+            <PropertyRef Name="NomeTela" />
+            <PropertyRef Name="CodigoTela" />
+            <PropertyRef Name="NomeArquivo" />
+          </Key>
+          <Property Name="IDAplicacao" Type="int" Nullable="false" />
+          <Property Name="NomeAplicacao" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Descricao" Type="varchar(max)" Nullable="false" />
+          <Property Name="DataExclusao" Type="smalldatetime" />
+          <Property Name="IDTela" Type="int" Nullable="false" />
+          <Property Name="NomeTela" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CodigoTela" Type="int" Nullable="false" />
+          <Property Name="NomeArquivo" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Expr1" Type="smalldatetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Nivel7Seguranca.dbo.vwTelaOperacao' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwTelaOperacao">
+          <Key>
+            <PropertyRef Name="IDTela" />
+            <PropertyRef Name="IDOperacao" />
+            <PropertyRef Name="NomeTela" />
+            <PropertyRef Name="CodigoTela" />
+            <PropertyRef Name="NomeArquivo" />
+            <PropertyRef Name="NomeOperacao" />
+          </Key>
+          <Property Name="IDTela" Type="int" Nullable="false" />
+          <Property Name="IDOperacao" Type="int" Nullable="false" />
+          <Property Name="NomeTela" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CodigoTela" Type="int" Nullable="false" />
+          <Property Name="NomeArquivo" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="DataExclusao" Type="smalldatetime" />
+          <Property Name="Expr1" Type="smalldatetime" />
+          <Property Name="NomeOperacao" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_HistoricoAcesso_Aplicacao">
+          <End Role="Aplicacao" Type="Nivel7SegurancaModel.Store.Aplicacao" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="HistoricoAcesso" Type="Nivel7SegurancaModel.Store.HistoricoAcesso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Aplicacao">
+              <PropertyRef Name="IDAplicacao" />
+            </Principal>
+            <Dependent Role="HistoricoAcesso">
+              <PropertyRef Name="IDAplicacao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HistoricoAcesso_Usuario">
+          <End Role="Usuario" Type="Nivel7SegurancaModel.Store.Usuario" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="HistoricoAcesso" Type="Nivel7SegurancaModel.Store.HistoricoAcesso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="IDUsuario" />
+            </Principal>
+            <Dependent Role="HistoricoAcesso">
+              <PropertyRef Name="IDUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OperacaoSistema_Aplicacao">
+          <End Role="Aplicacao" Type="Nivel7SegurancaModel.Store.Aplicacao" Multiplicity="1" />
+          <End Role="OperacaoSistema" Type="Nivel7SegurancaModel.Store.OperacaoSistema" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Aplicacao">
+              <PropertyRef Name="IDAplicacao" />
+            </Principal>
+            <Dependent Role="OperacaoSistema">
+              <PropertyRef Name="IDAplicacao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OperacaoTelaPerfil_PerfilSistema">
+          <End Role="PerfilSistema" Type="Nivel7SegurancaModel.Store.PerfilSistema" Multiplicity="1" />
+          <End Role="OperacaoTelaPerfil" Type="Nivel7SegurancaModel.Store.OperacaoTelaPerfil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PerfilSistema">
+              <PropertyRef Name="IDPerfilSistema" />
+            </Principal>
+            <Dependent Role="OperacaoTelaPerfil">
+              <PropertyRef Name="IDPerfilSistema" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OperacaoTelaPerfil_TelaSistema">
+          <End Role="TelaSistema" Type="Nivel7SegurancaModel.Store.TelaSistema" Multiplicity="1" />
+          <End Role="OperacaoTelaPerfil" Type="Nivel7SegurancaModel.Store.OperacaoTelaPerfil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TelaSistema">
+              <PropertyRef Name="IDTela" />
+            </Principal>
+            <Dependent Role="OperacaoTelaPerfil">
+              <PropertyRef Name="IDTela" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PerfilSistema_Aplicacao">
+          <End Role="Aplicacao" Type="Nivel7SegurancaModel.Store.Aplicacao" Multiplicity="1" />
+          <End Role="PerfilSistema" Type="Nivel7SegurancaModel.Store.PerfilSistema" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Aplicacao">
+              <PropertyRef Name="IDAplicacao" />
+            </Principal>
+            <Dependent Role="PerfilSistema">
+              <PropertyRef Name="IDAplicacao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tela_Operacao_OperacaoSistema">
+          <End Role="OperacaoSistema" Type="Nivel7SegurancaModel.Store.OperacaoSistema" Multiplicity="1" />
+          <End Role="Tela_Operacao" Type="Nivel7SegurancaModel.Store.Tela_Operacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OperacaoSistema">
+              <PropertyRef Name="IDOperacao" />
+            </Principal>
+            <Dependent Role="Tela_Operacao">
+              <PropertyRef Name="IDOperacao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tela_Operacao_TelaSistema">
+          <End Role="TelaSistema" Type="Nivel7SegurancaModel.Store.TelaSistema" Multiplicity="1" />
+          <End Role="Tela_Operacao" Type="Nivel7SegurancaModel.Store.Tela_Operacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TelaSistema">
+              <PropertyRef Name="IDTela" />
+            </Principal>
+            <Dependent Role="Tela_Operacao">
+              <PropertyRef Name="IDTela" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TelaSistema_Aplicacao">
+          <End Role="Aplicacao" Type="Nivel7SegurancaModel.Store.Aplicacao" Multiplicity="1" />
+          <End Role="TelaSistema" Type="Nivel7SegurancaModel.Store.TelaSistema" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Aplicacao">
+              <PropertyRef Name="IDAplicacao" />
+            </Principal>
+            <Dependent Role="TelaSistema">
+              <PropertyRef Name="IDAplicacao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioAplicacaoPerfil_Aplicacao">
+          <End Role="Aplicacao" Type="Nivel7SegurancaModel.Store.Aplicacao" Multiplicity="1" />
+          <End Role="UsuarioAplicacaoPerfil" Type="Nivel7SegurancaModel.Store.UsuarioAplicacaoPerfil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Aplicacao">
+              <PropertyRef Name="IDAplicacao" />
+            </Principal>
+            <Dependent Role="UsuarioAplicacaoPerfil">
+              <PropertyRef Name="IDAplicacao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioAplicacaoPerfil_PerfilSistema1">
+          <End Role="PerfilSistema" Type="Nivel7SegurancaModel.Store.PerfilSistema" Multiplicity="1" />
+          <End Role="UsuarioAplicacaoPerfil" Type="Nivel7SegurancaModel.Store.UsuarioAplicacaoPerfil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PerfilSistema">
+              <PropertyRef Name="IDPerfilSistema" />
+            </Principal>
+            <Dependent Role="UsuarioAplicacaoPerfil">
+              <PropertyRef Name="IDPerfilSistema" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioAplicacaoPerfil_Usuario">
+          <End Role="Usuario" Type="Nivel7SegurancaModel.Store.Usuario" Multiplicity="1" />
+          <End Role="UsuarioAplicacaoPerfil" Type="Nivel7SegurancaModel.Store.UsuarioAplicacaoPerfil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="IDUsuario" />
+            </Principal>
+            <Dependent Role="UsuarioAplicacaoPerfil">
+              <PropertyRef Name="IDUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="AplicacaoDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDAplicacao" Type="int" Mode="In" />
+        </Function>
+        <Function Name="AplicacaoInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="InOut" />
+          <Parameter Name="NomeAplicacao" Type="varchar" Mode="In" />
+          <Parameter Name="Descricao" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="AplicacaoUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDAplicacao" Type="int" Mode="In" />
+          <Parameter Name="NomeAplicacao" Type="varchar" Mode="In" />
+          <Parameter Name="Descricao" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="HistoricoAcessoDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDAplicacao" Type="int" Mode="In" />
+          <Parameter Name="IDUsuario" Type="int" Mode="In" />
+          <Parameter Name="DataHora" Type="smalldatetime" Mode="In" />
+        </Function>
+        <Function Name="HistoricoAcessoInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDAplicacao" Type="int" Mode="In" />
+          <Parameter Name="IDUsuario" Type="int" Mode="In" />
+          <Parameter Name="DataHora" Type="smalldatetime" Mode="In" />
+        </Function>
+        <Function Name="HistoricoAcessoUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDAplicacao" Type="int" Mode="In" />
+          <Parameter Name="IDUsuario" Type="int" Mode="In" />
+          <Parameter Name="DataHora" Type="smalldatetime" Mode="In" />
+        </Function>
+        <Function Name="OperacaoSistemaDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDOperacao" Type="int" Mode="In" />
+        </Function>
+        <Function Name="OperacaoSistemaInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDOperacao" Type="int" Mode="InOut" />
+          <Parameter Name="IDAplicacao" Type="int" Mode="In" />
+          <Parameter Name="NomeOperacao" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="OperacaoSistemaUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDOperacao" Type="int" Mode="In" />
+          <Parameter Name="IDAplicacao" Type="int" Mode="In" />
+          <Parameter Name="NomeOperacao" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="OperacaoTelaPerfilDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDPerfilSistema" Type="int" Mode="In" />
+          <Parameter Name="IDTela" Type="int" Mode="In" />
+          <Parameter Name="IDOperacao" Type="int" Mode="In" />
+        </Function>
+        <Function Name="OperacaoTelaPerfilInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDPerfilSistema" Type="int" Mode="In" />
+          <Parameter Name="IDTela" Type="int" Mode="In" />
+          <Parameter Name="IDOperacao" Type="int" Mode="In" />
+        </Function>
+        <Function Name="OperacaoTelaPerfilUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDPerfilSistema" Type="int" Mode="In" />
+          <Parameter Name="IDTela" Type="int" Mode="In" />
+          <Parameter Name="IDOperacao" Type="int" Mode="In" />
+        </Function>
+        <Function Name="PerfilSistemaDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDPerfilSistema" Type="int" Mode="In" />
+        </Function>
+        <Function Name="PerfilSistemaInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDPerfilSistema" Type="int" Mode="InOut" />
+          <Parameter Name="IDAplicacao" Type="int" Mode="In" />
+          <Parameter Name="NomePerfil" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="PerfilSistemaUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDPerfilSistema" Type="int" Mode="In" />
+          <Parameter Name="IDAplicacao" Type="int" Mode="In" />
+          <Parameter Name="NomePerfil" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Tela_OperacaoDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDTela" Type="int" Mode="In" />
+          <Parameter Name="IDOperacao" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Tela_OperacaoInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDTela" Type="int" Mode="In" />
+          <Parameter Name="IDOperacao" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Tela_OperacaoUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDTela" Type="int" Mode="In" />
+          <Parameter Name="IDOperacao" Type="int" Mode="In" />
+        </Function>
+        <Function Name="TelaAplicacaoDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDAplicacao" Type="int" Mode="In" />
+          <Parameter Name="IDTela" Type="int" Mode="In" />
+        </Function>
+        <Function Name="TelaAplicacaoInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDAplicacao" Type="int" Mode="In" />
+          <Parameter Name="IDTela" Type="int" Mode="In" />
+        </Function>
+        <Function Name="TelaAplicacaoUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDAplicacao" Type="int" Mode="In" />
+          <Parameter Name="IDTela" Type="int" Mode="In" />
+        </Function>
+        <Function Name="TelaSistemaDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDTela" Type="int" Mode="In" />
+        </Function>
+        <Function Name="TelaSistemaInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDTela" Type="int" Mode="InOut" />
+          <Parameter Name="IDAplicacao" Type="int" Mode="In" />
+          <Parameter Name="NomeTela" Type="varchar" Mode="In" />
+          <Parameter Name="CodigoTela" Type="int" Mode="In" />
+          <Parameter Name="NomeArquivo" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="TelaSistemaUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDTela" Type="int" Mode="In" />
+          <Parameter Name="IDAplicacao" Type="int" Mode="In" />
+          <Parameter Name="NomeTela" Type="varchar" Mode="In" />
+          <Parameter Name="CodigoTela" Type="int" Mode="In" />
+          <Parameter Name="NomeArquivo" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="UsuarioAplicacaoPerfilDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDAplicacao" Type="int" Mode="In" />
+          <Parameter Name="IDUsuario" Type="int" Mode="In" />
+        </Function>
+        <Function Name="UsuarioAplicacaoPerfilInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDAplicacao" Type="int" Mode="In" />
+          <Parameter Name="IDUsuario" Type="int" Mode="In" />
+          <Parameter Name="IDPerfilSistema" Type="int" Mode="In" />
+          <Parameter Name="Senha" Type="varchar" Mode="In" />
+          <Parameter Name="AcessoPermitido" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="UsuarioAplicacaoPerfilUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDAplicacaoAtual" Type="int" Mode="In" />
+          <Parameter Name="IDAplicacao" Type="int" Mode="In" />
+          <Parameter Name="IDUsuario" Type="int" Mode="In" />
+          <Parameter Name="IDPerfilSistema" Type="int" Mode="In" />
+          <Parameter Name="Senha" Type="varchar" Mode="In" />
+          <Parameter Name="AcessoPermitido" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="UsuarioDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDUsuario" Type="int" Mode="In" />
+        </Function>
+        <Function Name="UsuarioInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDUsuario" Type="int" Mode="InOut" />
+          <Parameter Name="Nome" Type="varchar" Mode="In" />
+          <Parameter Name="Email" Type="varchar" Mode="In" />
+          <Parameter Name="TelefoneFixo" Type="varchar" Mode="In" />
+          <Parameter Name="Celular" Type="varchar" Mode="In" />
+          <Parameter Name="Bairro" Type="varchar" Mode="In" />
+          <Parameter Name="Rua" Type="varchar" Mode="In" />
+          <Parameter Name="Municipio" Type="varchar" Mode="In" />
+          <Parameter Name="NumeroCasa" Type="varchar" Mode="In" />
+          <Parameter Name="Estado" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="UsuarioUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDUsuario" Type="int" Mode="In" />
+          <Parameter Name="Nome" Type="varchar" Mode="In" />
+          <Parameter Name="Email" Type="varchar" Mode="In" />
+          <Parameter Name="TelefoneFixo" Type="varchar" Mode="In" />
+          <Parameter Name="Celular" Type="varchar" Mode="In" />
+          <Parameter Name="Bairro" Type="varchar" Mode="In" />
+          <Parameter Name="Rua" Type="varchar" Mode="In" />
+          <Parameter Name="Municipio" Type="varchar" Mode="In" />
+          <Parameter Name="NumeroCasa" Type="varchar" Mode="In" />
+          <Parameter Name="Estado" Type="varchar" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Nivel7SegurancaModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="Nivel7SegurancaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Aplicacao" EntityType="Nivel7SegurancaModel.Aplicacao" />
+          <EntitySet Name="HistoricoAcesso" EntityType="Nivel7SegurancaModel.HistoricoAcesso" />
+          <EntitySet Name="OperacaoTelaPerfil" EntityType="Nivel7SegurancaModel.OperacaoTelaPerfil" />
+          <EntitySet Name="TelaSistema" EntityType="Nivel7SegurancaModel.TelaSistema" />
+          <EntitySet Name="Usuario" EntityType="Nivel7SegurancaModel.Usuario" />
+          <AssociationSet Name="FK_HistoricoAcesso_Aplicacao" Association="Nivel7SegurancaModel.FK_HistoricoAcesso_Aplicacao">
+            <End Role="Aplicacao" EntitySet="Aplicacao" />
+            <End Role="HistoricoAcesso" EntitySet="HistoricoAcesso" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HistoricoAcesso_Usuario" Association="Nivel7SegurancaModel.FK_HistoricoAcesso_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="HistoricoAcesso" EntitySet="HistoricoAcesso" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OperacaoTelaPerfil_TelaSistema" Association="Nivel7SegurancaModel.FK_OperacaoTelaPerfil_TelaSistema">
+            <End Role="TelaSistema" EntitySet="TelaSistema" />
+            <End Role="OperacaoTelaPerfil" EntitySet="OperacaoTelaPerfil" />
+          </AssociationSet>
+          <FunctionImport Name="UsuarioInsert">
+            <Parameter Name="IDUsuario" Mode="InOut" Type="Int32" />
+            <Parameter Name="Nome" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="TelefoneFixo" Mode="In" Type="String" />
+            <Parameter Name="Celular" Mode="In" Type="String" />
+            <Parameter Name="Bairro" Mode="In" Type="String" />
+            <Parameter Name="Rua" Mode="In" Type="String" />
+            <Parameter Name="Municipio" Mode="In" Type="String" />
+            <Parameter Name="NumeroCasa" Mode="In" Type="String" />
+            <Parameter Name="Estado" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="AplicacaoInsert">
+            <Parameter Name="ID" Mode="InOut" Type="Int32" />
+            <Parameter Name="NomeAplicacao" Mode="In" Type="String" />
+            <Parameter Name="Descricao" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="TelaSistemaInsert">
+            <Parameter Name="IDTela" Mode="InOut" Type="Int32" />
+            <Parameter Name="IDAplicacao" Mode="In" Type="Int32" />
+            <Parameter Name="NomeTela" Mode="In" Type="String" />
+            <Parameter Name="CodigoTela" Mode="In" Type="Int32" />
+            <Parameter Name="NomeArquivo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="OperacaoSistemaInsert">
+            <Parameter Name="IDOperacao" Mode="InOut" Type="Int32" />
+            <Parameter Name="IDAplicacao" Mode="In" Type="Int32" />
+            <Parameter Name="NomeOperacao" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="OperacaoSistema" EntityType="Nivel7SegurancaModel.OperacaoSistema" />
+          <AssociationSet Name="FK_OperacaoSistema_Aplicacao" Association="Nivel7SegurancaModel.FK_OperacaoSistema_Aplicacao">
+            <End Role="Aplicacao" EntitySet="Aplicacao" />
+            <End Role="OperacaoSistema" EntitySet="OperacaoSistema" />
+          </AssociationSet>
+          <AssociationSet Name="Tela_Operacao" Association="Nivel7SegurancaModel.Tela_Operacao">
+            <End Role="OperacaoSistema" EntitySet="OperacaoSistema" />
+            <End Role="TelaSistema" EntitySet="TelaSistema" />
+          </AssociationSet>
+          <FunctionImport Name="Tela_OperacaoInsert">
+            <Parameter Name="IDTela" Mode="In" Type="Int32" />
+            <Parameter Name="IDOperacao" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="TelaAplicacaoInsert">
+            <Parameter Name="IDAplicacao" Mode="In" Type="Int32" />
+            <Parameter Name="IDTela" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="vwTelaOperacao" EntityType="Nivel7SegurancaModel.vwTelaOperacao" />
+          <AssociationSet Name="FK_TelaSistema_Aplicacao" Association="Nivel7SegurancaModel.FK_TelaSistema_Aplicacao">
+            <End Role="Aplicacao" EntitySet="Aplicacao" />
+            <End Role="TelaSistema" EntitySet="TelaSistema" />
+          </AssociationSet>
+          <FunctionImport Name="AplicacaoDelete">
+          <Parameter Name="IDAplicacao" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="AplicacaoUpdate">
+            <Parameter Name="IDAplicacao" Mode="In" Type="Int32" />
+            <Parameter Name="NomeAplicacao" Mode="In" Type="String" />
+            <Parameter Name="Descricao" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UsuarioUpdate">
+            <Parameter Name="IDUsuario" Mode="In" Type="Int32" />
+            <Parameter Name="Nome" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="TelefoneFixo" Mode="In" Type="String" />
+            <Parameter Name="Celular" Mode="In" Type="String" />
+            <Parameter Name="Bairro" Mode="In" Type="String" />
+            <Parameter Name="Rua" Mode="In" Type="String" />
+            <Parameter Name="Municipio" Mode="In" Type="String" />
+            <Parameter Name="NumeroCasa" Mode="In" Type="String" />
+            <Parameter Name="Estado" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UsuarioDelete">
+          <Parameter Name="IDUsuario" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="TelaSistemaUpdate">
+            <Parameter Name="IDTela" Mode="In" Type="Int32" />
+            <Parameter Name="IDAplicacao" Mode="In" Type="Int32" />
+            <Parameter Name="NomeTela" Mode="In" Type="String" />
+            <Parameter Name="CodigoTela" Mode="In" Type="Int32" />
+            <Parameter Name="NomeArquivo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="TelaSistemaDelete">
+          <Parameter Name="IDTela" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Tela_OperacaoUpdate">
+            <Parameter Name="IDTela" Mode="In" Type="Int32" />
+            <Parameter Name="IDOperacao" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="OperacaoSistemaUpdate">
+            <Parameter Name="IDOperacao" Mode="In" Type="Int32" />
+            <Parameter Name="IDAplicacao" Mode="In" Type="Int32" />
+            <Parameter Name="NomeOperacao" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="OperacaoSistemaDelete">
+          <Parameter Name="IDOperacao" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="vwTelaAplicacao" EntityType="Nivel7SegurancaModel.vwTelaAplicacao" />
+          <FunctionImport Name="PerfilSistemaInsert">
+            <Parameter Name="IDPerfilSistema" Mode="InOut" Type="Int32" />
+            <Parameter Name="IDAplicacao" Mode="In" Type="Int32" />
+            <Parameter Name="NomePerfil" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="PerfilSistemaUpdate">
+            <Parameter Name="IDPerfilSistema" Mode="In" Type="Int32" />
+            <Parameter Name="IDAplicacao" Mode="In" Type="Int32" />
+            <Parameter Name="NomePerfil" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="PerfilSistemaDelete">
+          <Parameter Name="IDPerfilSistema" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="PerfilSistema" EntityType="Nivel7SegurancaModel.PerfilSistema" />
+          <AssociationSet Name="FK_PerfilSistema_Aplicacao" Association="Nivel7SegurancaModel.FK_PerfilSistema_Aplicacao">
+            <End Role="Aplicacao" EntitySet="Aplicacao" />
+            <End Role="PerfilSistema" EntitySet="PerfilSistema" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OperacaoTelaPerfil_PerfilSistema" Association="Nivel7SegurancaModel.FK_OperacaoTelaPerfil_PerfilSistema">
+            <End Role="PerfilSistema" EntitySet="PerfilSistema" />
+            <End Role="OperacaoTelaPerfil" EntitySet="OperacaoTelaPerfil" />
+          </AssociationSet>
+          <FunctionImport Name="Tela_OperacaoDelete">
+            <Parameter Name="IDTela" Mode="In" Type="Int32" />
+            <Parameter Name="IDOperacao" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UsuarioAplicacaoPerfilUpdate">
+            <Parameter Name="IDAplicacaoAtual" Mode="In" Type="Int32" />
+            <Parameter Name="IDAplicacao" Mode="In" Type="Int32" />
+            <Parameter Name="IDUsuario" Mode="In" Type="Int32" />
+            <Parameter Name="IDPerfilSistema" Mode="In" Type="Int32" />
+            <Parameter Name="Senha" Mode="In" Type="String" />
+            <Parameter Name="AcessoPermitido" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="UsuarioAplicacaoPerfilInsert">
+            <Parameter Name="IDAplicacao" Mode="In" Type="Int32" />
+            <Parameter Name="IDUsuario" Mode="In" Type="Int32" />
+            <Parameter Name="IDPerfilSistema" Mode="In" Type="Int32" />
+            <Parameter Name="Senha" Mode="In" Type="String" />
+            <Parameter Name="AcessoPermitido" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="UsuarioAplicacaoPerfilDelete">
+            <Parameter Name="IDAplicacao" Mode="In" Type="Int32" />
+            <Parameter Name="IDUsuario" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="vwAplicacaoUsuarioPerfil" EntityType="Nivel7SegurancaModel.vwAplicacaoUsuarioPerfil" />
+          <EntitySet Name="UsuarioAplicacaoPerfil" EntityType="Nivel7SegurancaModel.UsuarioAplicacaoPerfil" />
+          <AssociationSet Name="FK_UsuarioAplicacaoPerfil_Aplicacao" Association="Nivel7SegurancaModel.FK_UsuarioAplicacaoPerfil_Aplicacao">
+            <End Role="Aplicacao" EntitySet="Aplicacao" />
+            <End Role="UsuarioAplicacaoPerfil" EntitySet="UsuarioAplicacaoPerfil" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioAplicacaoPerfil_PerfilSistema1" Association="Nivel7SegurancaModel.FK_UsuarioAplicacaoPerfil_PerfilSistema1">
+            <End Role="PerfilSistema" EntitySet="PerfilSistema" />
+            <End Role="UsuarioAplicacaoPerfil" EntitySet="UsuarioAplicacaoPerfil" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioAplicacaoPerfil_Usuario" Association="Nivel7SegurancaModel.FK_UsuarioAplicacaoPerfil_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="UsuarioAplicacaoPerfil" EntitySet="UsuarioAplicacaoPerfil" />
+          </AssociationSet>
+          <FunctionImport Name="SelectUsuarioByName" EntitySet="vwAplicacaoUsuarioPerfil" ReturnType="Collection(Nivel7SegurancaModel.vwAplicacaoUsuarioPerfil)">
+            <Parameter Name="NomeUsuario" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="vwAplicacaoTelaOperacao" EntityType="Nivel7SegurancaModel.vwAplicacaoTelaOperacao" />
+          <EntitySet Name="vwPerfilUsuario" EntityType="Nivel7SegurancaModel.vwPerfilUsuario" />
+          <EntitySet Name="vwOperacaoTelaPerfil" EntityType="Nivel7SegurancaModel.vwOperacaoTelaPerfil" />
+          <FunctionImport Name="OperacaoTelaPerfilDelete">
+            <Parameter Name="IDPerfilSistema" Mode="In" Type="Int32" />
+            <Parameter Name="IDTela" Mode="In" Type="Int32" />
+            <Parameter Name="IDOperacao" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="OperacaoTelaPerfilInsert">
+            <Parameter Name="IDPerfilSistema" Mode="In" Type="Int32" />
+            <Parameter Name="IDTela" Mode="In" Type="Int32" />
+            <Parameter Name="IDOperacao" Mode="In" Type="Int32" />
+          </FunctionImport>
+          </EntityContainer>
+        <EntityType Name="Aplicacao">
+          <Key>
+            <PropertyRef Name="IDAplicacao" />
+          </Key>
+          <Property Name="IDAplicacao" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NomeAplicacao" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Descricao" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="HistoricoAcesso" Relationship="Nivel7SegurancaModel.FK_HistoricoAcesso_Aplicacao" FromRole="Aplicacao" ToRole="HistoricoAcesso" />
+          <Property Type="DateTime" Name="DataExclusao" />
+          <NavigationProperty Name="OperacaoSistema" Relationship="Nivel7SegurancaModel.FK_OperacaoSistema_Aplicacao" FromRole="Aplicacao" ToRole="OperacaoSistema" />
+          <NavigationProperty Name="TelaSistema_1" Relationship="Nivel7SegurancaModel.FK_TelaSistema_Aplicacao" FromRole="Aplicacao" ToRole="TelaSistema" />
+          <NavigationProperty Name="PerfilSistema" Relationship="Nivel7SegurancaModel.FK_PerfilSistema_Aplicacao" FromRole="Aplicacao" ToRole="PerfilSistema" />
+          <NavigationProperty Name="UsuarioAplicacaoPerfil" Relationship="Nivel7SegurancaModel.FK_UsuarioAplicacaoPerfil_Aplicacao" FromRole="Aplicacao" ToRole="UsuarioAplicacaoPerfil" />
+        </EntityType>
+        <EntityType Name="HistoricoAcesso">
+          <Key>
+            <PropertyRef Name="IDAplicacao" />
+            <PropertyRef Name="IDUsuario" />
+            <PropertyRef Name="DataHora" />
+          </Key>
+          <Property Name="IDAplicacao" Type="Int32" Nullable="false" />
+          <Property Name="IDUsuario" Type="Int32" Nullable="false" />
+          <Property Name="DataHora" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Aplicacao" Relationship="Nivel7SegurancaModel.FK_HistoricoAcesso_Aplicacao" FromRole="HistoricoAcesso" ToRole="Aplicacao" />
+          <NavigationProperty Name="Usuario" Relationship="Nivel7SegurancaModel.FK_HistoricoAcesso_Usuario" FromRole="HistoricoAcesso" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="OperacaoTelaPerfil">
+          <Key>
+            <PropertyRef Name="IDPerfilSistema" />
+            <PropertyRef Name="IDTela" />
+            <PropertyRef Name="IDOperacao" />
+          </Key>
+          <Property Name="IDPerfilSistema" Type="Int32" Nullable="false" />
+          <Property Name="IDTela" Type="Int32" Nullable="false" />
+          <Property Name="IDOperacao" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TelaSistema" Relationship="Nivel7SegurancaModel.FK_OperacaoTelaPerfil_TelaSistema" FromRole="OperacaoTelaPerfil" ToRole="TelaSistema" />
+          <NavigationProperty Name="PerfilSistema" Relationship="Nivel7SegurancaModel.FK_OperacaoTelaPerfil_PerfilSistema" FromRole="OperacaoTelaPerfil" ToRole="PerfilSistema" />
+        </EntityType>
+        <EntityType Name="TelaSistema">
+          <Key>
+            <PropertyRef Name="IDTela" />
+          </Key>
+          <Property Name="IDTela" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NomeTela" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CodigoTela" Type="Int32" Nullable="false" />
+          <Property Name="NomeArquivo" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="OperacaoTelaPerfil" Relationship="Nivel7SegurancaModel.FK_OperacaoTelaPerfil_TelaSistema" FromRole="TelaSistema" ToRole="OperacaoTelaPerfil" />
+          <Property Type="DateTime" Name="DataExclusao" />
+          <NavigationProperty Name="OperacaoSistema" Relationship="Nivel7SegurancaModel.Tela_Operacao" FromRole="TelaSistema" ToRole="OperacaoSistema" />
+          <Property Type="Int32" Name="IDAplicacao" Nullable="false" />
+          <NavigationProperty Name="Aplicacao_1" Relationship="Nivel7SegurancaModel.FK_TelaSistema_Aplicacao" FromRole="TelaSistema" ToRole="Aplicacao" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="IDUsuario" />
+          </Key>
+          <Property Name="IDUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="TelefoneFixo" Type="String" MaxLength="13" Unicode="false" FixedLength="false" />
+          <Property Name="Celular" Type="String" MaxLength="13" Unicode="false" FixedLength="false" />
+          <Property Name="Bairro" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="Rua" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Municipio" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="NumeroCasa" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Estado" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="HistoricoAcesso" Relationship="Nivel7SegurancaModel.FK_HistoricoAcesso_Usuario" FromRole="Usuario" ToRole="HistoricoAcesso" />
+          <Property Type="DateTime" Name="DataExclusao" />
+          <NavigationProperty Name="UsuarioAplicacaoPerfil" Relationship="Nivel7SegurancaModel.FK_UsuarioAplicacaoPerfil_Usuario" FromRole="Usuario" ToRole="UsuarioAplicacaoPerfil" />
+        </EntityType>
+        <Association Name="FK_HistoricoAcesso_Aplicacao">
+          <End Role="Aplicacao" Type="Nivel7SegurancaModel.Aplicacao" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="HistoricoAcesso" Type="Nivel7SegurancaModel.HistoricoAcesso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Aplicacao">
+              <PropertyRef Name="IDAplicacao" />
+            </Principal>
+            <Dependent Role="HistoricoAcesso">
+              <PropertyRef Name="IDAplicacao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HistoricoAcesso_Usuario">
+          <End Role="Usuario" Type="Nivel7SegurancaModel.Usuario" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="HistoricoAcesso" Type="Nivel7SegurancaModel.HistoricoAcesso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="IDUsuario" />
+            </Principal>
+            <Dependent Role="HistoricoAcesso">
+              <PropertyRef Name="IDUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OperacaoTelaPerfil_TelaSistema">
+          <End Role="TelaSistema" Type="Nivel7SegurancaModel.TelaSistema" Multiplicity="1" />
+          <End Role="OperacaoTelaPerfil" Type="Nivel7SegurancaModel.OperacaoTelaPerfil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TelaSistema">
+              <PropertyRef Name="IDTela" />
+            </Principal>
+            <Dependent Role="OperacaoTelaPerfil">
+              <PropertyRef Name="IDTela" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="OperacaoSistema">
+          <Key>
+            <PropertyRef Name="IDOperacao" />
+          </Key>
+          <Property Type="Int32" Name="IDOperacao" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="IDAplicacao" Nullable="false" />
+          <Property Type="String" Name="NomeOperacao" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="DataExclusao" />
+          <NavigationProperty Name="Aplicacao" Relationship="Nivel7SegurancaModel.FK_OperacaoSistema_Aplicacao" FromRole="OperacaoSistema" ToRole="Aplicacao" />
+          <NavigationProperty Name="TelaSistema" Relationship="Nivel7SegurancaModel.Tela_Operacao" FromRole="OperacaoSistema" ToRole="TelaSistema" />
+        </EntityType>
+        <Association Name="FK_OperacaoSistema_Aplicacao">
+          <End Type="Nivel7SegurancaModel.Aplicacao" Role="Aplicacao" Multiplicity="1" />
+          <End Type="Nivel7SegurancaModel.OperacaoSistema" Role="OperacaoSistema" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Aplicacao">
+              <PropertyRef Name="IDAplicacao" />
+            </Principal>
+            <Dependent Role="OperacaoSistema">
+              <PropertyRef Name="IDAplicacao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Tela_Operacao">
+          <End Type="Nivel7SegurancaModel.OperacaoSistema" Role="OperacaoSistema" Multiplicity="*" />
+          <End Type="Nivel7SegurancaModel.TelaSistema" Role="TelaSistema" Multiplicity="*" />
+        </Association>
+        <EntityType Name="vwTelaOperacao">
+          <Key>
+            <PropertyRef Name="IDTela" />
+            <PropertyRef Name="IDOperacao" />
+            <PropertyRef Name="NomeTela" />
+            <PropertyRef Name="CodigoTela" />
+            <PropertyRef Name="NomeArquivo" />
+            <PropertyRef Name="NomeOperacao" />
+          </Key>
+          <Property Type="Int32" Name="IDTela" Nullable="false" />
+          <Property Type="Int32" Name="IDOperacao" Nullable="false" />
+          <Property Type="String" Name="NomeTela" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="CodigoTela" Nullable="false" />
+          <Property Type="String" Name="NomeArquivo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="DataExclusao" />
+          <Property Type="DateTime" Name="Expr1" />
+          <Property Type="String" Name="NomeOperacao" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_TelaSistema_Aplicacao">
+          <End Type="Nivel7SegurancaModel.Aplicacao" Role="Aplicacao" Multiplicity="1" />
+          <End Type="Nivel7SegurancaModel.TelaSistema" Role="TelaSistema" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Aplicacao">
+              <PropertyRef Name="IDAplicacao" />
+            </Principal>
+            <Dependent Role="TelaSistema">
+              <PropertyRef Name="IDAplicacao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="vwTelaAplicacao">
+          <Key>
+            <PropertyRef Name="IDAplicacao" />
+            <PropertyRef Name="NomeAplicacao" />
+            <PropertyRef Name="Descricao" />
+            <PropertyRef Name="IDTela" />
+            <PropertyRef Name="NomeTela" />
+            <PropertyRef Name="CodigoTela" />
+            <PropertyRef Name="NomeArquivo" />
+          </Key>
+          <Property Type="Int32" Name="IDAplicacao" Nullable="false" />
+          <Property Type="String" Name="NomeAplicacao" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Descricao" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="DataExclusao" />
+          <Property Type="Int32" Name="IDTela" Nullable="false" />
+          <Property Type="String" Name="NomeTela" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="CodigoTela" Nullable="false" />
+          <Property Type="String" Name="NomeArquivo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Expr1" />
+        </EntityType>
+        <EntityType Name="PerfilSistema">
+          <Key>
+            <PropertyRef Name="IDPerfilSistema" />
+          </Key>
+          <Property Type="Int32" Name="IDPerfilSistema" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="IDAplicacao" Nullable="false" />
+          <Property Type="String" Name="NomePerfil" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="dataexclusao" />
+          <NavigationProperty Name="Aplicacao" Relationship="Nivel7SegurancaModel.FK_PerfilSistema_Aplicacao" FromRole="PerfilSistema" ToRole="Aplicacao" />
+          <NavigationProperty Name="OperacaoTelaPerfil" Relationship="Nivel7SegurancaModel.FK_OperacaoTelaPerfil_PerfilSistema" FromRole="PerfilSistema" ToRole="OperacaoTelaPerfil" />
+          <NavigationProperty Name="UsuarioAplicacaoPerfil" Relationship="Nivel7SegurancaModel.FK_UsuarioAplicacaoPerfil_PerfilSistema1" FromRole="PerfilSistema" ToRole="UsuarioAplicacaoPerfil" />
+        </EntityType>
+        <Association Name="FK_PerfilSistema_Aplicacao">
+          <End Type="Nivel7SegurancaModel.Aplicacao" Role="Aplicacao" Multiplicity="1" />
+          <End Type="Nivel7SegurancaModel.PerfilSistema" Role="PerfilSistema" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Aplicacao">
+              <PropertyRef Name="IDAplicacao" />
+            </Principal>
+            <Dependent Role="PerfilSistema">
+              <PropertyRef Name="IDAplicacao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OperacaoTelaPerfil_PerfilSistema">
+          <End Type="Nivel7SegurancaModel.PerfilSistema" Role="PerfilSistema" Multiplicity="1" />
+          <End Type="Nivel7SegurancaModel.OperacaoTelaPerfil" Role="OperacaoTelaPerfil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PerfilSistema">
+              <PropertyRef Name="IDPerfilSistema" />
+            </Principal>
+            <Dependent Role="OperacaoTelaPerfil">
+              <PropertyRef Name="IDPerfilSistema" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="vwAplicacaoUsuarioPerfil">
+          <Key>
+            <PropertyRef Name="IDUsuario" />
+            <PropertyRef Name="Nome" />
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Type="Int32" Name="IDUsuario" Nullable="false" />
+          <Property Type="String" Name="Nome" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="DataExclusao" />
+          <Property Type="Int32" Name="IDAplicacao" />
+          <Property Type="String" Name="NomeAplicacao" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="IDPerfilSistema" />
+          <Property Type="String" Name="NomePerfil" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Descricao" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="AcessoPermitido" />
+        </EntityType>
+        <EntityType Name="UsuarioAplicacaoPerfil">
+          <Key>
+            <PropertyRef Name="IDAplicacao" />
+            <PropertyRef Name="IDUsuario" />
+            <PropertyRef Name="IDPerfilSistema" />
+          </Key>
+          <Property Type="Int32" Name="IDAplicacao" Nullable="false" />
+          <Property Type="Int32" Name="IDUsuario" Nullable="false" />
+          <Property Type="Int32" Name="IDPerfilSistema" Nullable="false" />
+          <Property Type="String" Name="Senha" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="AcessoPermitido" />
+          <NavigationProperty Name="Aplicacao" Relationship="Nivel7SegurancaModel.FK_UsuarioAplicacaoPerfil_Aplicacao" FromRole="UsuarioAplicacaoPerfil" ToRole="Aplicacao" />
+          <NavigationProperty Name="PerfilSistema" Relationship="Nivel7SegurancaModel.FK_UsuarioAplicacaoPerfil_PerfilSistema1" FromRole="UsuarioAplicacaoPerfil" ToRole="PerfilSistema" />
+          <NavigationProperty Name="Usuario" Relationship="Nivel7SegurancaModel.FK_UsuarioAplicacaoPerfil_Usuario" FromRole="UsuarioAplicacaoPerfil" ToRole="Usuario" />
+        </EntityType>
+        <Association Name="FK_UsuarioAplicacaoPerfil_Aplicacao">
+          <End Type="Nivel7SegurancaModel.Aplicacao" Role="Aplicacao" Multiplicity="1" />
+          <End Type="Nivel7SegurancaModel.UsuarioAplicacaoPerfil" Role="UsuarioAplicacaoPerfil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Aplicacao">
+              <PropertyRef Name="IDAplicacao" />
+            </Principal>
+            <Dependent Role="UsuarioAplicacaoPerfil">
+              <PropertyRef Name="IDAplicacao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioAplicacaoPerfil_PerfilSistema1">
+          <End Type="Nivel7SegurancaModel.PerfilSistema" Role="PerfilSistema" Multiplicity="1" />
+          <End Type="Nivel7SegurancaModel.UsuarioAplicacaoPerfil" Role="UsuarioAplicacaoPerfil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PerfilSistema">
+              <PropertyRef Name="IDPerfilSistema" />
+            </Principal>
+            <Dependent Role="UsuarioAplicacaoPerfil">
+              <PropertyRef Name="IDPerfilSistema" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioAplicacaoPerfil_Usuario">
+          <End Type="Nivel7SegurancaModel.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="Nivel7SegurancaModel.UsuarioAplicacaoPerfil" Role="UsuarioAplicacaoPerfil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="IDUsuario" />
+            </Principal>
+            <Dependent Role="UsuarioAplicacaoPerfil">
+              <PropertyRef Name="IDUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="vwAplicacaoTelaOperacao">
+          <Key>
+            <PropertyRef Name="NomeAplicacao" />
+            <PropertyRef Name="NomeTela" />
+            <PropertyRef Name="Descricao" />
+            <PropertyRef Name="CodigoTela" />
+            <PropertyRef Name="NomeArquivo" />
+            <PropertyRef Name="Expr2" />
+            <PropertyRef Name="IDOperacao" />
+            <PropertyRef Name="IDAplicacao" />
+            <PropertyRef Name="NomeOperacao" />
+          </Key>
+          <Property Type="String" Name="NomeAplicacao" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NomeTela" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Descricao" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="CodigoTela" Nullable="false" />
+          <Property Type="String" Name="NomeArquivo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Expr1" />
+          <Property Type="Int32" Name="Expr2" Nullable="false" />
+          <Property Type="Int32" Name="IDOperacao" Nullable="false" />
+          <Property Type="Int32" Name="IDAplicacao" Nullable="false" />
+          <Property Type="String" Name="NomeOperacao" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Expr3" />
+        </EntityType>
+        <EntityType Name="vwPerfilUsuario">
+          <Key>
+            <PropertyRef Name="IDUsuario" />
+            <PropertyRef Name="IDPerfilSistema" />
+            <PropertyRef Name="Nome" />
+            <PropertyRef Name="Email" />
+            <PropertyRef Name="NomePerfil" />
+          </Key>
+          <Property Type="Int32" Name="IDUsuario" Nullable="false" />
+          <Property Type="Int32" Name="IDPerfilSistema" Nullable="false" />
+          <Property Type="String" Name="Nome" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="DataExclusao" />
+          <Property Type="String" Name="NomePerfil" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Expr1" />
+        </EntityType>
+        <EntityType Name="vwOperacaoTelaPerfil">
+          <Key>
+            <PropertyRef Name="IDPerfilSistema" />
+            <PropertyRef Name="IDTela" />
+            <PropertyRef Name="IDOperacao" />
+            <PropertyRef Name="NomePerfil" />
+            <PropertyRef Name="NomeTela" />
+            <PropertyRef Name="NomeOperacao" />
+            <PropertyRef Name="IDAplicacao" />
+            <PropertyRef Name="NomeAplicacao" />
+            <PropertyRef Name="CodigoTela" />
+            <PropertyRef Name="NomeArquivo" />
+            <PropertyRef Name="Descricao" />
+          </Key>
+          <Property Type="Int32" Name="IDPerfilSistema" Nullable="false" />
+          <Property Type="Int32" Name="IDTela" Nullable="false" />
+          <Property Type="Int32" Name="IDOperacao" Nullable="false" />
+          <Property Type="String" Name="NomePerfil" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NomeTela" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NomeOperacao" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="IDAplicacao" Nullable="false" />
+          <Property Type="String" Name="NomeAplicacao" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="CodigoTela" Nullable="false" />
+          <Property Type="String" Name="NomeArquivo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Descricao" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Nivel7SegurancaModelStoreContainer" CdmEntityContainer="Nivel7SegurancaEntities">
+          <EntitySetMapping Name="Aplicacao"><EntityTypeMapping TypeName="Nivel7SegurancaModel.Aplicacao"><MappingFragment StoreEntitySet="Aplicacao">
+            <ScalarProperty Name="IDAplicacao" ColumnName="IDAplicacao" />
+                <ScalarProperty Name="DataExclusao" ColumnName="DataExclusao" />
+            <ScalarProperty Name="NomeAplicacao" ColumnName="NomeAplicacao" />
+            <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          </MappingFragment></EntityTypeMapping>
+            </EntitySetMapping>
+          <EntitySetMapping Name="HistoricoAcesso"><EntityTypeMapping TypeName="Nivel7SegurancaModel.HistoricoAcesso"><MappingFragment StoreEntitySet="HistoricoAcesso">
+            <ScalarProperty Name="IDAplicacao" ColumnName="IDAplicacao" />
+            <ScalarProperty Name="IDUsuario" ColumnName="IDUsuario" />
+            <ScalarProperty Name="DataHora" ColumnName="DataHora" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="OperacaoTelaPerfil"><EntityTypeMapping TypeName="Nivel7SegurancaModel.OperacaoTelaPerfil"><MappingFragment StoreEntitySet="OperacaoTelaPerfil">
+            <ScalarProperty Name="IDPerfilSistema" ColumnName="IDPerfilSistema" />
+            <ScalarProperty Name="IDTela" ColumnName="IDTela" />
+            <ScalarProperty Name="IDOperacao" ColumnName="IDOperacao" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="TelaSistema"><EntityTypeMapping TypeName="Nivel7SegurancaModel.TelaSistema"><MappingFragment StoreEntitySet="TelaSistema">
+            <ScalarProperty Name="IDAplicacao" ColumnName="IDAplicacao" />
+                <ScalarProperty Name="DataExclusao" ColumnName="DataExclusao" />
+                <ScalarProperty Name="IDTela" ColumnName="IDTela" />
+            <ScalarProperty Name="NomeTela" ColumnName="NomeTela" />
+            <ScalarProperty Name="CodigoTela" ColumnName="CodigoTela" />
+            <ScalarProperty Name="NomeArquivo" ColumnName="NomeArquivo" />
+          </MappingFragment></EntityTypeMapping>
+            <EntityTypeMapping TypeName="Nivel7SegurancaModel.TelaSistema">
+              <ModificationFunctionMapping>
+                <UpdateFunction FunctionName="Nivel7SegurancaModel.Store.TelaSistemaUpdate">
+                  <ScalarProperty Name="IDAplicacao" ParameterName="IDAplicacao" Version="Current" />
+                  <ScalarProperty Name="IDTela" ParameterName="IDTela" Version="Current" />
+                  <ScalarProperty Name="NomeArquivo" ParameterName="NomeArquivo" Version="Current" />
+                  <ScalarProperty Name="CodigoTela" ParameterName="CodigoTela" Version="Current" />
+                  <ScalarProperty Name="NomeTela" ParameterName="NomeTela" Version="Current" />
+                </UpdateFunction>
+                <DeleteFunction FunctionName="Nivel7SegurancaModel.Store.TelaSistemaDelete">
+                  <ScalarProperty Name="IDTela" ParameterName="IDTela" />
+                </DeleteFunction>
+                <InsertFunction FunctionName="Nivel7SegurancaModel.Store.TelaSistemaInsert" RowsAffectedParameter="IDTela">
+                  <ScalarProperty Name="IDAplicacao" ParameterName="IDAplicacao" />
+                  <ScalarProperty Name="NomeArquivo" ParameterName="NomeArquivo" />
+                  <ScalarProperty Name="CodigoTela" ParameterName="CodigoTela" />
+                  <ScalarProperty Name="NomeTela" ParameterName="NomeTela" />
+                  <ResultBinding Name="IDTela" ColumnName="IDTela" />
+                </InsertFunction>
+              </ModificationFunctionMapping>
+            </EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Usuario"><EntityTypeMapping TypeName="Nivel7SegurancaModel.Usuario"><MappingFragment StoreEntitySet="Usuario">
+            <ScalarProperty Name="DataExclusao" ColumnName="DataExclusao" />
+                <ScalarProperty Name="IDUsuario" ColumnName="IDUsuario" />
+            <ScalarProperty Name="Nome" ColumnName="Nome" />
+            <ScalarProperty Name="Email" ColumnName="Email" />
+            <ScalarProperty Name="TelefoneFixo" ColumnName="TelefoneFixo" />
+            <ScalarProperty Name="Celular" ColumnName="Celular" />
+            <ScalarProperty Name="Bairro" ColumnName="Bairro" />
+            <ScalarProperty Name="Rua" ColumnName="Rua" />
+            <ScalarProperty Name="Municipio" ColumnName="Municipio" />
+            <ScalarProperty Name="NumeroCasa" ColumnName="NumeroCasa" />
+            <ScalarProperty Name="Estado" ColumnName="Estado" />
+          </MappingFragment></EntityTypeMapping>
+            </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="UsuarioInsert" FunctionName="Nivel7SegurancaModel.Store.UsuarioInsert" />
+          <FunctionImportMapping FunctionImportName="AplicacaoInsert" FunctionName="Nivel7SegurancaModel.Store.AplicacaoInsert" />
+          <FunctionImportMapping FunctionImportName="TelaSistemaInsert" FunctionName="Nivel7SegurancaModel.Store.TelaSistemaInsert" />
+          <FunctionImportMapping FunctionImportName="OperacaoSistemaInsert" FunctionName="Nivel7SegurancaModel.Store.OperacaoSistemaInsert" />
+          <EntitySetMapping Name="OperacaoSistema">
+            <EntityTypeMapping TypeName="Nivel7SegurancaModel.OperacaoSistema">
+              <MappingFragment StoreEntitySet="OperacaoSistema">
+                <ScalarProperty Name="DataExclusao" ColumnName="DataExclusao" />
+                <ScalarProperty Name="NomeOperacao" ColumnName="NomeOperacao" />
+                <ScalarProperty Name="IDAplicacao" ColumnName="IDAplicacao" />
+                <ScalarProperty Name="IDOperacao" ColumnName="IDOperacao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Tela_Operacao" TypeName="Nivel7SegurancaModel.Tela_Operacao" StoreEntitySet="Tela_Operacao">
+            <EndProperty Name="TelaSistema">
+              <ScalarProperty Name="IDTela" ColumnName="IDTela" />
+            </EndProperty>
+            <EndProperty Name="OperacaoSistema">
+              <ScalarProperty Name="IDOperacao" ColumnName="IDOperacao" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="Tela_OperacaoInsert" FunctionName="Nivel7SegurancaModel.Store.Tela_OperacaoInsert" />
+          <FunctionImportMapping FunctionImportName="TelaAplicacaoInsert" FunctionName="Nivel7SegurancaModel.Store.TelaAplicacaoInsert" />
+          <EntitySetMapping Name="vwTelaOperacao">
+            <EntityTypeMapping TypeName="Nivel7SegurancaModel.vwTelaOperacao">
+              <MappingFragment StoreEntitySet="vwTelaOperacao">
+                <ScalarProperty Name="NomeOperacao" ColumnName="NomeOperacao" />
+                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+                <ScalarProperty Name="DataExclusao" ColumnName="DataExclusao" />
+                <ScalarProperty Name="NomeArquivo" ColumnName="NomeArquivo" />
+                <ScalarProperty Name="CodigoTela" ColumnName="CodigoTela" />
+                <ScalarProperty Name="NomeTela" ColumnName="NomeTela" />
+                <ScalarProperty Name="IDOperacao" ColumnName="IDOperacao" />
+                <ScalarProperty Name="IDTela" ColumnName="IDTela" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="AplicacaoDelete" FunctionName="Nivel7SegurancaModel.Store.AplicacaoDelete" />
+          <FunctionImportMapping FunctionImportName="AplicacaoUpdate" FunctionName="Nivel7SegurancaModel.Store.AplicacaoUpdate" />
+          <FunctionImportMapping FunctionImportName="UsuarioUpdate" FunctionName="Nivel7SegurancaModel.Store.UsuarioUpdate" />
+          <FunctionImportMapping FunctionImportName="UsuarioDelete" FunctionName="Nivel7SegurancaModel.Store.UsuarioDelete" />
+          <FunctionImportMapping FunctionImportName="TelaSistemaUpdate" FunctionName="Nivel7SegurancaModel.Store.TelaSistemaUpdate" />
+          <FunctionImportMapping FunctionImportName="TelaSistemaDelete" FunctionName="Nivel7SegurancaModel.Store.TelaSistemaDelete" />
+          <FunctionImportMapping FunctionImportName="Tela_OperacaoUpdate" FunctionName="Nivel7SegurancaModel.Store.Tela_OperacaoUpdate" />
+          <FunctionImportMapping FunctionImportName="OperacaoSistemaUpdate" FunctionName="Nivel7SegurancaModel.Store.OperacaoSistemaUpdate" />
+          <FunctionImportMapping FunctionImportName="OperacaoSistemaDelete" FunctionName="Nivel7SegurancaModel.Store.OperacaoSistemaDelete" />
+          <EntitySetMapping Name="vwTelaAplicacao">
+            <EntityTypeMapping TypeName="Nivel7SegurancaModel.vwTelaAplicacao">
+              <MappingFragment StoreEntitySet="vwTelaAplicacao">
+                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+                <ScalarProperty Name="NomeArquivo" ColumnName="NomeArquivo" />
+                <ScalarProperty Name="CodigoTela" ColumnName="CodigoTela" />
+                <ScalarProperty Name="NomeTela" ColumnName="NomeTela" />
+                <ScalarProperty Name="IDTela" ColumnName="IDTela" />
+                <ScalarProperty Name="DataExclusao" ColumnName="DataExclusao" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="NomeAplicacao" ColumnName="NomeAplicacao" />
+                <ScalarProperty Name="IDAplicacao" ColumnName="IDAplicacao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="PerfilSistemaInsert" FunctionName="Nivel7SegurancaModel.Store.PerfilSistemaInsert" />
+          <FunctionImportMapping FunctionImportName="PerfilSistemaUpdate" FunctionName="Nivel7SegurancaModel.Store.PerfilSistemaUpdate" />
+          <FunctionImportMapping FunctionImportName="PerfilSistemaDelete" FunctionName="Nivel7SegurancaModel.Store.PerfilSistemaDelete" />
+          <EntitySetMapping Name="PerfilSistema">
+            <EntityTypeMapping TypeName="Nivel7SegurancaModel.PerfilSistema">
+              <MappingFragment StoreEntitySet="PerfilSistema">
+                <ScalarProperty Name="dataexclusao" ColumnName="dataexclusao" />
+                <ScalarProperty Name="NomePerfil" ColumnName="NomePerfil" />
+                <ScalarProperty Name="IDAplicacao" ColumnName="IDAplicacao" />
+                <ScalarProperty Name="IDPerfilSistema" ColumnName="IDPerfilSistema" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Tela_OperacaoDelete" FunctionName="Nivel7SegurancaModel.Store.Tela_OperacaoDelete" />
+          <FunctionImportMapping FunctionImportName="UsuarioAplicacaoPerfilUpdate" FunctionName="Nivel7SegurancaModel.Store.UsuarioAplicacaoPerfilUpdate" />
+          <FunctionImportMapping FunctionImportName="UsuarioAplicacaoPerfilInsert" FunctionName="Nivel7SegurancaModel.Store.UsuarioAplicacaoPerfilInsert" />
+          <FunctionImportMapping FunctionImportName="UsuarioAplicacaoPerfilDelete" FunctionName="Nivel7SegurancaModel.Store.UsuarioAplicacaoPerfilDelete" />
+          <EntitySetMapping Name="vwAplicacaoUsuarioPerfil">
+            <EntityTypeMapping TypeName="Nivel7SegurancaModel.vwAplicacaoUsuarioPerfil">
+              <MappingFragment StoreEntitySet="vwAplicacaoUsuarioPerfil">
+                <ScalarProperty Name="AcessoPermitido" ColumnName="AcessoPermitido" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="NomePerfil" ColumnName="NomePerfil" />
+                <ScalarProperty Name="IDPerfilSistema" ColumnName="IDPerfilSistema" />
+                <ScalarProperty Name="NomeAplicacao" ColumnName="NomeAplicacao" />
+                <ScalarProperty Name="IDAplicacao" ColumnName="IDAplicacao" />
+                <ScalarProperty Name="DataExclusao" ColumnName="DataExclusao" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="IDUsuario" ColumnName="IDUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsuarioAplicacaoPerfil">
+            <EntityTypeMapping TypeName="Nivel7SegurancaModel.UsuarioAplicacaoPerfil">
+              <MappingFragment StoreEntitySet="UsuarioAplicacaoPerfil">
+                <ScalarProperty Name="AcessoPermitido" ColumnName="AcessoPermitido" />
+                <ScalarProperty Name="Senha" ColumnName="Senha" />
+                <ScalarProperty Name="IDPerfilSistema" ColumnName="IDPerfilSistema" />
+                <ScalarProperty Name="IDUsuario" ColumnName="IDUsuario" />
+                <ScalarProperty Name="IDAplicacao" ColumnName="IDAplicacao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwAplicacaoTelaOperacao">
+            <EntityTypeMapping TypeName="Nivel7SegurancaModel.vwAplicacaoTelaOperacao">
+              <MappingFragment StoreEntitySet="vwAplicacaoTelaOperacao">
+                <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+                <ScalarProperty Name="NomeOperacao" ColumnName="NomeOperacao" />
+                <ScalarProperty Name="IDAplicacao" ColumnName="IDAplicacao" />
+                <ScalarProperty Name="IDOperacao" ColumnName="IDOperacao" />
+                <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+                <ScalarProperty Name="NomeArquivo" ColumnName="NomeArquivo" />
+                <ScalarProperty Name="CodigoTela" ColumnName="CodigoTela" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="NomeTela" ColumnName="NomeTela" />
+                <ScalarProperty Name="NomeAplicacao" ColumnName="NomeAplicacao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwPerfilUsuario">
+            <EntityTypeMapping TypeName="Nivel7SegurancaModel.vwPerfilUsuario">
+              <MappingFragment StoreEntitySet="vwPerfilUsuario">
+                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+                <ScalarProperty Name="NomePerfil" ColumnName="NomePerfil" />
+                <ScalarProperty Name="DataExclusao" ColumnName="DataExclusao" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="IDPerfilSistema" ColumnName="IDPerfilSistema" />
+                <ScalarProperty Name="IDUsuario" ColumnName="IDUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwOperacaoTelaPerfil">
+            <EntityTypeMapping TypeName="Nivel7SegurancaModel.vwOperacaoTelaPerfil">
+              <MappingFragment StoreEntitySet="vwOperacaoTelaPerfil">
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="NomeArquivo" ColumnName="NomeArquivo" />
+                <ScalarProperty Name="CodigoTela" ColumnName="CodigoTela" />
+                <ScalarProperty Name="NomeAplicacao" ColumnName="NomeAplicacao" />
+                <ScalarProperty Name="IDAplicacao" ColumnName="IDAplicacao" />
+                <ScalarProperty Name="NomeOperacao" ColumnName="NomeOperacao" />
+                <ScalarProperty Name="NomeTela" ColumnName="NomeTela" />
+                <ScalarProperty Name="NomePerfil" ColumnName="NomePerfil" />
+                <ScalarProperty Name="IDOperacao" ColumnName="IDOperacao" />
+                <ScalarProperty Name="IDTela" ColumnName="IDTela" />
+                <ScalarProperty Name="IDPerfilSistema" ColumnName="IDPerfilSistema" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="OperacaoTelaPerfilDelete" FunctionName="Nivel7SegurancaModel.Store.OperacaoTelaPerfilDelete" />
+          <FunctionImportMapping FunctionImportName="OperacaoTelaPerfilInsert" FunctionName="Nivel7SegurancaModel.Store.OperacaoTelaPerfilInsert" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="DALNivel7Seguranca">
+        <EntityTypeShape EntityType="Nivel7SegurancaModel.Aplicacao" Width="1.5" PointX="0.75" PointY="5.875" Height="2.5571907552083335" IsExpanded="true" />
+        <EntityTypeShape EntityType="Nivel7SegurancaModel.HistoricoAcesso" Width="1.5" PointX="3.625" PointY="5" Height="1.9802864583333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="Nivel7SegurancaModel.OperacaoTelaPerfil" Width="2" PointX="5.25" PointY="8.75" Height="1.9802864583333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="Nivel7SegurancaModel.TelaSistema" Width="1.5" PointX="4.625" PointY="1.75" Height="2.9417936197916665" IsExpanded="true" />
+        <EntityTypeShape EntityType="Nivel7SegurancaModel.Usuario" Width="1.5" PointX="0.75" PointY="9.375" Height="3.3263964843749996" IsExpanded="true" />
+        <AssociationConnector Association="Nivel7SegurancaModel.FK_HistoricoAcesso_Aplicacao" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="6.4276432291666667" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="6.4276432291666659" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="6.4276432291666667" />
+          <ConnectorPoint PointX="3.2916666666666665" PointY="6.4276432291666659" />
+          <ConnectorPoint PointX="3.4583333333333335" PointY="6.4276432291666667" />
+          <ConnectorPoint PointX="3.625" PointY="6.4276432291666667" />
+        </AssociationConnector>
+        <AssociationConnector Association="Nivel7SegurancaModel.FK_HistoricoAcesso_Usuario" ManuallyRouted="false">
+          <ConnectorPoint PointX="3" PointY="9.0011528461538468" />
+          <ConnectorPoint PointX="2.625" PointY="9.0011528461538468" />
+          <ConnectorPoint PointX="2.625" PointY="5.6825696145833335" />
+          <ConnectorPoint PointX="3.2916666666666665" PointY="5.6825696145833327" />
+          <ConnectorPoint PointX="3.4583333333333335" PointY="5.6825696145833335" />
+          <ConnectorPoint PointX="3.625" PointY="5.6825696145833335" />
+        </AssociationConnector>
+        <AssociationConnector Association="Nivel7SegurancaModel.FK_OperacaoTelaPerfil_TelaSistema" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.82812375" PointY="4.4994921875" />
+          <ConnectorPoint PointX="5.82812375" PointY="8.75" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Nivel7SegurancaModel.OperacaoSistema" Width="2.125" PointX="3.5" PointY="11.25" Height="2.1725878906250102" />
+        <AssociationConnector Association="Nivel7SegurancaModel.FK_OperacaoSistema_Aplicacao" >
+          <ConnectorPoint PointX="2.25" PointY="8.5621834951923077" />
+          <ConnectorPoint PointX="2.8125" PointY="9.1246834951923077" />
+          <ConnectorPoint PointX="2.8125" PointY="12.336293945312505" />
+          <ConnectorPoint PointX="3.5" PointY="12.336293945312505" />
+        </AssociationConnector>
+        <AssociationConnector Association="Nivel7SegurancaModel.Tela_Operacao" >
+          <ConnectorPoint PointX="4.5625" PointY="11.25" />
+          <ConnectorPoint PointX="4.5625" PointY="10.739889322916667" />
+          <ConnectorPoint PointX="4.75" PointY="10.739889322916667" />
+          <ConnectorPoint PointX="4.75" PointY="7.2302864583333335" />
+          <ConnectorPoint PointX="3.375" PointY="7.2302864583333335" />
+          <ConnectorPoint PointX="3.375" PointY="3.12474609375" />
+          <ConnectorPoint PointX="4.625" PointY="3.12474609375" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Nivel7SegurancaModel.vwTelaOperacao" Width="1.5" PointX="9" PointY="3.875" Height="2.5571907552083326" />
+        <AssociationConnector Association="Nivel7SegurancaModel.FK_TelaSistema_Aplicacao" >
+          <ConnectorPoint PointX="2.25" PointY="7.40708734375" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="7.4070873437499989" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="7.40708734375" />
+          <ConnectorPoint PointX="4.666666666666667" PointY="7.4070873437499989" />
+          <ConnectorPoint PointX="4.833333333333333" PointY="7.40708734375" />
+          <ConnectorPoint PointX="5.476559375" PointY="7.40708734375" />
+          <ConnectorPoint PointX="5.476559375" PointY="4.4994921875" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Nivel7SegurancaModel.vwTelaAplicacao" Width="1.5" PointX="7.5" PointY="0.75" Height="2.7494921875000031" />
+        <EntityTypeShape EntityType="Nivel7SegurancaModel.PerfilSistema" Width="1.5" PointX="3" PointY="8.125" Height="2.3648893229166674" />
+        <AssociationConnector Association="Nivel7SegurancaModel.FK_PerfilSistema_Aplicacao" >
+          <ConnectorPoint PointX="2.25" PointY="8.3123392475961531" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="8.3123392475961531" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="8.3123392475961531" />
+          <ConnectorPoint PointX="3" PointY="8.3123392475961531" />
+        </AssociationConnector>
+        <AssociationConnector Association="Nivel7SegurancaModel.FK_OperacaoTelaPerfil_PerfilSistema" >
+          <ConnectorPoint PointX="4.5" PointY="9.6199446614583337" />
+          <ConnectorPoint PointX="4.666666666666667" PointY="9.6199446614583337" />
+          <ConnectorPoint PointX="4.833333333333333" PointY="9.6199446614583337" />
+          <ConnectorPoint PointX="5.25" PointY="9.6199446614583337" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Nivel7SegurancaModel.vwAplicacaoUsuarioPerfil" Width="1.5" PointX="7.5" PointY="3.5" Height="2.9417936197916656" />
+        <EntityTypeShape EntityType="Nivel7SegurancaModel.UsuarioAplicacaoPerfil" Width="1.875" PointX="7.375" PointY="10.75" Height="2.5571907552083388" />
+        <AssociationConnector Association="Nivel7SegurancaModel.FK_UsuarioAplicacaoPerfil_Aplicacao" >
+          <ConnectorPoint PointX="1.5" PointY="8.6244921875" />
+          <ConnectorPoint PointX="1.5" PointY="9.125" />
+          <ConnectorPoint PointX="2.5" PointY="9.125" />
+          <ConnectorPoint PointX="2.5" PointY="11" />
+          <ConnectorPoint PointX="2.7291666666666665" PointY="11" />
+          <ConnectorPoint PointX="2.8958333333333335" PointY="11" />
+          <ConnectorPoint PointX="4.479166666666667" PointY="11" />
+          <ConnectorPoint PointX="4.645833333333333" PointY="11" />
+          <ConnectorPoint PointX="7" PointY="11" />
+          <ConnectorPoint PointX="7" PointY="12.137969877604171" />
+          <ConnectorPoint PointX="7.375" PointY="12.137969877604171" />
+        </AssociationConnector>
+        <AssociationConnector Association="Nivel7SegurancaModel.FK_UsuarioAplicacaoPerfil_PerfilSistema1" >
+          <ConnectorPoint PointX="3.21875" PointY="10.489889322916667" />
+          <ConnectorPoint PointX="3.21875" PointY="10.859375" />
+          <ConnectorPoint PointX="4.479166666666667" PointY="10.859375" />
+          <ConnectorPoint PointX="4.645833333333333" PointY="10.859375" />
+          <ConnectorPoint PointX="7.375" PointY="10.859375" />
+        </AssociationConnector>
+        <AssociationConnector Association="Nivel7SegurancaModel.FK_UsuarioAplicacaoPerfil_Usuario" >
+          <ConnectorPoint PointX="2.25" PointY="10.96875" />
+          <ConnectorPoint PointX="2.7291666666666665" PointY="10.96875" />
+          <ConnectorPoint PointX="2.8958333333333335" PointY="10.96875" />
+          <ConnectorPoint PointX="4.479166666666667" PointY="10.96875" />
+          <ConnectorPoint PointX="4.645833333333333" PointY="10.96875" />
+          <ConnectorPoint PointX="7.375" PointY="10.96875" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Nivel7SegurancaModel.vwAplicacaoTelaOperacao" Width="1.5" PointX="9" PointY="0.75" Height="3.1340950520833388" />
+        <EntityTypeShape EntityType="Nivel7SegurancaModel.vwPerfilUsuario" Width="1.5" PointX="9.125" PointY="6.5" Height="2.3848893229166652" />
+        <EntityTypeShape EntityType="Nivel7SegurancaModel.vwOperacaoTelaPerfil" Width="1.5" PointX="7.5" PointY="6.5" Height="3.1340950520833388" />
+        </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
